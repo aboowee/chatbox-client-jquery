@@ -12,10 +12,14 @@ var MessagesView = {
 
   render: function() {
     // TODO: Render _all_ the messages.
+    //Within render, access all messages
+    //For each message, Call renderMessage
+
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+        //Reference over messageView
   },
 
   handleClick: function(event) {
