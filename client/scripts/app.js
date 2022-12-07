@@ -20,8 +20,8 @@ var App = {
     App.fetch(App.stopSpinner);
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
+    App.stopSpinner();
     setInterval(App.fetch, 3000);
-    // console.log(App.fetch());
   },
 
   fetch: function(callback = ()=>{}) {

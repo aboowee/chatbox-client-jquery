@@ -6,6 +6,7 @@ var Messages = {
 
   // TODO: Define how you want to store your messages.
   _data: {},
+
   //{user1: [message1, message2]}
 
   //Roomnumber
@@ -16,13 +17,16 @@ var Messages = {
   //Retrieve Method
   _retrieveMessage: function (data) {
     //Output would be a string of the message
+
   },
   //Add Method
   _addMesssage: function(userData) {
-    //Input: String (somehow grabbed from Data)
-    //Output: 
+    //Input: array of objects
+    //Output: updating _data {}
     //Constraints:
     //Edge Case:
+    
+    Messages._data[//messageid]
     //Assumptions: Data received consists of username and message
       //Singular
 
