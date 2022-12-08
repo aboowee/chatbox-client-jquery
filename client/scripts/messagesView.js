@@ -7,19 +7,35 @@ var MessagesView = {
 
   initialize: function() {
     // TODO: Perform any work which needs to be done
+    MessagesView.render();
     // when this view loads.
   },
 
-  render: function() {
+  render: function(room) {
     // TODO: Render _all_ the messages.
-    //Within render, access all messages
-    //For each message, Call renderMessage
+    MessagesView.$chats.empty();
+    if (room) {
+      for (var key in Messages._data) {
+        if (Messages._data[key].roomname === room) {
+          MessagesView.renderMessage(Messages._data[key]);
+        }
+      }
+    } else {
+      for (var key in Messages._data) {
+        // console.log('hello');
+        MessagesView.renderMessage(Messages._data[key]);
+      }
+    }
 
   },
 
   renderMessage: function(message) {
+    // console.log('message======>', message);
     // TODO: Render a single message.
-        //Reference over messageView
+    // var renderedMessage = MessageView.render({username: message.username, text: message.text});
+    var renderedMessage = MessageView.render(message);
+    MessagesView.$chats.prepend(renderedMessage);
+
   },
 
   handleClick: function(event) {

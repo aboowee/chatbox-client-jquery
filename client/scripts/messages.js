@@ -6,46 +6,35 @@ var Messages = {
 
   // TODO: Define how you want to store your messages.
   _data: {},
-
-  //{user1: [message1, message2]}
+  //{member_id: message object}
 
   //Roomnumber
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
 
-  //Retrieve Method
-  _retrieveMessage: function (data) {
-    //Output would be a string of the message
 
-  },
   //Add Method
-  _addMesssage: function(userData) {
-    //Input: array of objects
-    //Output: updating _data {}
-    //Constraints:
-    //Edge Case:
+  _addToMesssageStorage: function(message) {
     
-    Messages._data[//messageid]
+    Messages._data[message.message_id] = message;
+
     //Assumptions: Data received consists of username and message
-      //Singular
-
-    //Get data
-    //In the _data object, create username as key
-    //Input message to username as value;
-    if (Messages._data[userData.username] === undefined) {
-      Messages._data[userData.username] = [userData.message];
-    } else {
-      Messages._data[userData.username].push(userData.message);
-    }
-
-
-
+    //Singular
+  
     //Message consists of message, who it's from, room number
 
   },
 
-
+  _updateMessageStorage: function (dataCollection) {
+    //Loop over data collection
+    //Check each object for message ID
+    dataCollection.forEach((currentMessage) => {
+      if (!Messages._data[currentMessage.message_id]) {
+        Messages._addToMesssageStorage(currentMessage);
+      }
+    });
+  }
 
 
 };
