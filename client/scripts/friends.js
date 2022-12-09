@@ -5,9 +5,15 @@
 var Friends = {
   // TODO: Define how you want to store your list of friends.
 
-  _data: null,
+  _data: [],
 
-  // TODO: Define methods which allow you to add, toggle,
+  //Whenever friend is added
+  //Any one in this array should have friend toggled to true
+  //Highlight some way
+
+  //If clicked again, toggle friend to false and unhighlight
+
+  // TODO: Define methods which allow you oggto add, tle,
   // and check the friendship status of other users.
 
 };

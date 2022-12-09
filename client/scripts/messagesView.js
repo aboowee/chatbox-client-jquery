@@ -22,7 +22,6 @@ var MessagesView = {
       }
     } else {
       for (var key in Messages._data) {
-        // console.log('hello');
         MessagesView.renderMessage(Messages._data[key]);
       }
     }

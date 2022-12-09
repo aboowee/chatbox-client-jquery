@@ -18,6 +18,7 @@ var Messages = {
   _addToMesssageStorage: function(message) {
     
     Messages._data[message.message_id] = message;
+    message.friend = false;
 
     //Assumptions: Data received consists of username and message
     //Singular

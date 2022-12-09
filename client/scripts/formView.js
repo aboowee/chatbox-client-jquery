@@ -20,7 +20,7 @@ var FormView = {
     var message = {
       username: App.username, 
       text: $('#message').val(), 
-      roomname: 'lobby'};
+      roomname: RoomsView.$select.val()};
     
     Parse.create(message);
     // document.getElementById('message').reset();
