@@ -23,7 +23,6 @@ var RoomsView = {
     RoomsView.$select.empty();
     Rooms._data.forEach((currentRoom)=> {
       RoomsView.renderRoom(currentRoom);
-      // console.log('currentRoom-------', currentRoom);
     });
   },
 

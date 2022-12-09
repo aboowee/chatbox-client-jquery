@@ -27,7 +27,6 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      // console.log('Data------>', data);
       Messages._updateMessageStorage(data);
       MessagesView.render();
       Rooms.updateRooms(data);
@@ -37,7 +36,7 @@ var App = {
       // TODO: Use the data to update Messages (data) and Rooms
       // and re-render the corresponding views.
 
-      //This will call for messages, messagesView, rooms and roomsView. Must write out those functions
+      // This will call for messages, messagesView, rooms and roomsView. Must write out those functions
     });
   },
   
