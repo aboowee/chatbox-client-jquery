@@ -3,17 +3,14 @@
 // with and manipulate the data.
 
 var Friends = {
-  // TODO: Define how you want to store your list of friends.
-
   _data: [],
 
-  //Whenever friend is added
-  //Any one in this array should have friend toggled to true
-  //Highlight some way
+  addFriend: function(friendName) {
+    Friends._data.push(friendName);
+  },
 
-  //If clicked again, toggle friend to false and unhighlight
-
-  // TODO: Define methods which allow you oggto add, tle,
-  // and check the friendship status of other users.
-
+  removeFriend: function(friendName) {
+    var index = Friends._data.indexOf(friendName);
+    Friends._data.splice(index, 1);
+  }
 };

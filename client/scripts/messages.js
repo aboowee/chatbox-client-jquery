@@ -4,32 +4,18 @@
 
 var Messages = {
 
-  // TODO: Define how you want to store your messages.
   _data: {},
   //{member_id: message object}
 
-  //Roomnumber
-
-  // TODO: Define methods which allow you to retrieve from,
-  // add to, and generally interact with the messages.
-
-
-  //Add Method
   _addToMesssageStorage: function(message) {
     
     Messages._data[message.message_id] = message;
-    message.friend = false;
-
-    //Assumptions: Data received consists of username and message
-    //Singular
-  
+    message.friend = false;  
     //Message consists of message, who it's from, room number
 
   },
 
   _updateMessageStorage: function (dataCollection) {
-    //Loop over data collection
-    //Check each object for message ID
     dataCollection.forEach((currentMessage) => {
       if (!Messages._data[currentMessage.message_id]) {
         Messages._addToMesssageStorage(currentMessage);

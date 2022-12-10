@@ -6,13 +6,11 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-    // TODO: Perform any work which needs to be done
     MessagesView.render();
-    // when this view loads.
+    MessagesView.$chats.on('click', MessagesView.handleClick);
   },
 
   render: function(room) {
-    // TODO: Render _all_ the messages.
     MessagesView.$chats.empty();
     if (room) {
       for (var key in Messages._data) {
@@ -25,21 +23,24 @@ var MessagesView = {
         MessagesView.renderMessage(Messages._data[key]);
       }
     }
-
   },
-
+  
   renderMessage: function(message) {
-    // console.log('message======>', message);
-    // TODO: Render a single message.
-    // var renderedMessage = MessageView.render({username: message.username, text: message.text});
-    var renderedMessage = MessageView.render(message);
+    if (Friends._data.includes(message.username)) {
+      var renderedMessage = MessageView.renderFriend(message);
+    } else {
+      var renderedMessage = MessageView.render(message);
+    }   
     MessagesView.$chats.prepend(renderedMessage);
-
   },
 
   handleClick: function(event) {
-    // TODO: handle a user clicking on a message
-    // (this should add the sender to the user's friend list).
+    if (Friends._data.includes(event.target.innerHTML)) {
+      Friends.removeFriend(event.target.innerHTML);
+    } else {
+      Friends.addFriend(event.target.innerHTML);
+    }
+    App.fetch();
   }
 
 };
